@@ -22,6 +22,9 @@ struct ProfileEditor: View {
                 Text("Username").bold()
                 Divider()
                 TextField("Username", text: $profile.username)
+                    .onAppear {
+                        UITextField.appearance().clearButtonMode = .whileEditing
+                    }
             }
             
             Toggle(isOn: $profile.prefersNotifications) {
